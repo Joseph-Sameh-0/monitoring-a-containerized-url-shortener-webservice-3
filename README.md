@@ -1,74 +1,50 @@
-# Beshoy Ibrahim Asham Melek
-# Hassan Saleh Hassan Gad
-# Joseph Sameh Fouad Nasr
+# URL Shortener
 
-# Getting Started with Create React App
+## 👥 Team Members
+- **Beshoy Ibrahim Asham Melek**
+- **Hassan Saleh Hassan Gad**
+- **Joseph Sameh Fouad Nasr**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 📌 Project Overview
+This project is a **URL Shortener** web application that allows users to convert long URLs into short, easy-to-share links. The application provides analytics for each shortened URL, such as the number of clicks and geographic information about users. The system is designed for reliability, scalability, and user-friendliness.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🎯 Project Objectives
+- **Simplify Sharing:** Make long URLs concise and manageable for easier sharing.
+- **Analytics:** Provide users with real-time analytics on link usage.
+- **Security:** Prevent abuse through link validation and spam protection.
+- **User Management:** Allow users to create accounts and manage their links.
+- **Scalability:** Design the system to handle high volumes of URL shortening and redirection requests.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📂 Project Scope
+- **Core Features:**
+  - Shortening long URLs to unique short links.
+  - Redirecting users from short links to the original URLs.
+  - User registration, authentication, and dashboard.
+  - Analytics dashboard for each link.
+- **Out of Scope:**
+  - Mobile applications.
+  - Advanced third-party integrations (e.g., social media APIs).
+  - Paid subscription models.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🗓 Project Plan (5 Weeks)
 
-### `npm run build`
+| Week | Milestone                                      |
+|------|------------------------------------------------|
+|  1   | Requirements gathering & system design         |
+|  2   | Backend setup: Database & API development      |
+|  3   | Frontend implementation: User interface        |
+|  4   | Integration, link analytics & security         |
+|  5   | Testing, deployment & documentation           |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📝 Short Project Description
+A modern, reliable, and secure web application enabling users to shorten URLs, manage their links, and view real-time analytics. Designed with scalability and user experience in mind, this URL shortener is ideal for anyone looking to simplify link sharing and track engagement.
