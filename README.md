@@ -1,6 +1,6 @@
-# Beshoy Ibrahim Asham Melek\
-# Hassan Saleh Hassan Gad\
-# Joseph Sameh Fouad Nasr\
+# Beshoy Ibrahim Asham Melek
+# Hassan Saleh Hassan Gad
+# Joseph Sameh Fouad Nasr
 
 # Getting Started with Create React App
 
