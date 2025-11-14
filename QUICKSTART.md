@@ -14,10 +14,10 @@ Run everything with Docker Compose:
 
 ```bash
 # 1. Build all services
-./build-microservices.sh
+./build.sh
 
 # 2. Start all services
-docker compose -f docker-compose-microservices.yml up
+docker compose up
 
 # 3. Access the application
 # Frontend: http://localhost:9000
@@ -37,7 +37,7 @@ For frontend development with hot module replacement:
 
 ```bash
 # 1. Start microservices in background
-docker compose -f docker-compose-microservices.yml up -d auth-service url-service file-service note-service
+docker compose up -d auth-service url-service file-service note-service
 
 # 2. Install frontend dependencies (first time only)
 cd frontend
@@ -112,7 +112,7 @@ npm run dev
 
 ### Docker Compose
 ```bash
-docker compose -f docker-compose-microservices.yml down
+docker compose down
 ```
 
 ### Local Development

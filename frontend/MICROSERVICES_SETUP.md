@@ -48,7 +48,7 @@ fetch(API_ENDPOINTS.URL.SHORTEN, { ... })
 
 1. **Start all microservices:**
    ```bash
-   docker compose -f docker-compose-microservices.yml up
+   docker compose up
    ```
 
 2. **Start the frontend development server:**

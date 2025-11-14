@@ -40,17 +40,17 @@ The URL Shortener application has been refactored into a microservices architect
 
 1. Build all services:
    ```bash
-   ./build-microservices.sh
+   ./build.sh
    ```
 
 2. Start all microservices:
    ```bash
-   docker compose -f docker-compose-microservices.yml up
+   docker compose up
    ```
 
 3. Stop all services:
    ```bash
-   docker compose -f docker-compose-microservices.yml down
+   docker compose down
    ```
 
 ### Running Individual Services Locally

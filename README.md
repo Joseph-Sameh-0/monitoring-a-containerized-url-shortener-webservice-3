@@ -80,12 +80,12 @@ The application supports a microservices architecture where each service runs in
 
 1. Build the application:
    ```bash
-   ./build-microservices.sh
+   ./build.sh
    ```
 
 2. Start all microservices:
    ```bash
-   docker compose -f docker-compose-microservices.yml up
+   docker compose up
    ```
 
 3. Access the services:
@@ -103,7 +103,7 @@ For frontend development with live reload:
 
 1. Start the microservices:
    ```bash
-   docker compose -f docker-compose-microservices.yml up auth-service url-service file-service note-service
+   docker compose up auth-service url-service file-service note-service
    ```
 
 2. Start the frontend dev server:
