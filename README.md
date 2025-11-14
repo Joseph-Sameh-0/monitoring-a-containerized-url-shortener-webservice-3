@@ -74,9 +74,9 @@ This project is a **URL Shortener** web application that allows users to convert
 - Java 21 (for local development)
 - Node.js 18+ (for frontend development)
 
-### Running with Docker (Microservices Architecture)
+### Running with Docker
 
-The application supports a microservices architecture where each service runs independently.
+The application uses a microservices architecture where each service runs independently.
 
 1. Build the application:
    ```bash
@@ -97,7 +97,7 @@ The application supports a microservices architecture where each service runs in
    - **Prometheus**: http://localhost:9090
    - **Grafana**: http://localhost:3000
 
-### Development Mode (Frontend + Microservices)
+### Development Mode
 
 For frontend development with live reload:
 
@@ -114,25 +114,6 @@ For frontend development with live reload:
    ```
 
 3. Access the frontend at http://localhost:5173
-
-### Running with Docker (Monolithic Version)
-
-The original monolithic version is also available:
-
-1. Build the application:
-   ```bash
-   ./build.sh
-   ```
-
-2. Start all services:
-   ```bash
-   docker compose up
-   ```
-
-3. Access the services:
-   - **URL Shortener**: http://localhost:9000
-   - **Prometheus**: http://localhost:9090
-   - **Grafana**: http://localhost:3000
 
 ## 🛠️ Technology Stack
 
@@ -157,7 +138,7 @@ The original monolithic version is also available:
 
 ### Microservices Architecture
 
-The application supports a **microservices architecture** where each service runs as a separate, independent component:
+The application uses a **microservices architecture** where each service runs as a separate, independent component:
 
 1. **Auth Service** (Port 9001) - User authentication and JWT management
 2. **URL Service** (Port 9002) - URL shortening and redirection
@@ -167,41 +148,7 @@ The application supports a **microservices architecture** where each service run
 6. **Prometheus** (Port 9090) - Metrics collection from all services
 7. **Grafana** (Port 3000) - Metrics visualization
 
-Each service has its own database and can be scaled independently.
-
-### Monolithic Architecture (Original)
-
-The original monolithic version is also available:
-
-1. **Web Application** - Spring Boot backend serving both API and React frontend
-2. **Prometheus** - Scrapes metrics from the application
-3. **Grafana** - Visualizes metrics with custom dashboards
-
-All components run in Docker containers and communicate through a dedicated network.
-
-## 🔧 Development
-
-### Backend Development
-
-```bash
-cd backend
-./gradlew bootRun
-```
-
-### Frontend Development
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-### Running Tests
-
-```bash
-cd backend
-./gradlew test
-```
+Each service has its own database and can be scaled independently. All components run in Docker containers and communicate through a dedicated network.
 
 ## 📖 API Documentation
 
@@ -260,4 +207,4 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 ---
 
 ## 📝 Short Project Description
-A modern, reliable, and secure web application enabling users to shorten URLs, manage their links, and view real-time analytics. Designed with scalability and user experience in mind, this URL shortener is ideal for anyone looking to simplify link sharing and track engagement. Features comprehensive monitoring with Prometheus and Grafana, supporting both monolithic and microservices architectures.
+A modern, reliable, and secure web application enabling users to shorten URLs, manage their links, and view real-time analytics. Designed with scalability and user experience in mind, this URL shortener uses a microservices architecture and features comprehensive monitoring with Prometheus and Grafana.
