@@ -1,0 +1,45 @@
+# Git
+.git
+.gitattributes
+.github
+
+# Database
+*.db
+*.sqlite3
+data/
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# Monitoring data
+prometheus-data/
+grafana/
+
+# IDE
+.vscode/
+.idea/
+*Zone.Identifier
+
+# OS
+.DS_Store
+
+# Node build artifacts (will be built locally)
+frontend/node_modules/
+frontend/dist/
+node_modules/
+
+# Gradle build artifacts (except JAR)
+backend/.gradle/
+backend/bin/
+backend/build/
+!backend/build/libs/*.jar
+
+# Documentation
+*.md
+!backend/README.md
+
+# Other
+prometheus.yml

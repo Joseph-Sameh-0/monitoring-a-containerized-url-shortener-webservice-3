@@ -1,0 +1,36 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Auth Service
+  - job_name: 'auth-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['auth-service:9001']
+        labels:
+          service: 'auth'
+
+  # URL Service
+  - job_name: 'url-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['url-service:9002']
+        labels:
+          service: 'url'
+
+  # File Service
+  - job_name: 'file-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['file-service:9003']
+        labels:
+          service: 'file'
+
+  # Note Service
+  - job_name: 'note-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['note-service:9004']
+        labels:
+          service: 'note'

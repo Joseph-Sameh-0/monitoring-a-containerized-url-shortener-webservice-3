@@ -1,0 +1,142 @@
+services:
+  # Authentication Microservice
+  auth-service:
+    build:
+      context: .
+      dockerfile: microservices/auth-service/Dockerfile
+    container_name: auth-service
+    ports:
+      - "9001:9001"
+    env_file:
+      - .env
+    environment:
+      - JWT_SECRET=${JWT_SECRET_KEY}
+    volumes:
+      - ./data/auth:/app/data
+    networks:
+      - microservices
+      - monitoring
+
+  # URL Shortening Microservice
+  url-service:
+    build:
+      context: .
+      dockerfile: microservices/url-service/Dockerfile
+    container_name: url-service
+    ports:
+      - "9002:9002"
+    env_file:
+      - .env
+    environment:
+      - BASE_URL=http://localhost:9002
+      - JWT_SECRET=${JWT_SECRET_KEY}
+    volumes:
+      - ./data/urls:/app/data
+    networks:
+      - microservices
+      - monitoring
+
+  # File Sharing Microservice
+  file-service:
+    build:
+      context: .
+      dockerfile: microservices/file-service/Dockerfile
+    container_name: file-service
+    ports:
+      - "9003:9003"
+    env_file:
+      - .env
+    environment:
+      - BASE_URL=http://localhost:9003
+      - JWT_SECRET=${JWT_SECRET_KEY}
+    volumes:
+      - ./data/files:/app/data
+    networks:
+      - microservices
+      - monitoring
+
+  # Note Sharing Microservice
+  note-service:
+    build:
+      context: .
+      dockerfile: microservices/note-service/Dockerfile
+    container_name: note-service
+    ports:
+      - "9004:9004"
+    env_file:
+      - .env
+    environment:
+      - BASE_URL=http://localhost:9004
+      - JWT_SECRET=${JWT_SECRET_KEY}
+    volumes:
+      - ./data/notes:/app/data
+    networks:
+      - microservices
+      - monitoring
+
+  # Frontend (serves the React UI)
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: url-shortener-frontend
+    ports:
+      - "9000:80"
+    environment:
+      - BASE_URL=http://localhost:9000
+    volumes:
+      - ./data/frontend:/app/data
+    networks:
+      - microservices
+      - monitoring
+
+  # Prometheus for metrics collection
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    depends_on:
+      - auth-service
+      - url-service
+      - file-service
+      - note-service
+    networks:
+      - monitoring
+
+  # Grafana for metrics visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - EMAIL_ADDRESSES=${EMAIL_ADDRESSES}
+      - GF_SMTP_ENABLED=${GF_SMTP_ENABLED:-true}
+      - GF_SMTP_HOST=${GF_SMTP_HOST}
+      - GF_SMTP_USER=${GF_SMTP_USER}
+      - GF_SMTP_PASSWORD=${GF_SMTP_PASSWORD}
+      - GF_SMTP_FROM_ADDRESS=${GF_SMTP_FROM_ADDRESS}
+      - GF_SMTP_FROM_NAME=${GF_SMTP_FROM_NAME:-Grafana}
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/etc/grafana/dashboards
+    networks:
+      - monitoring
+
+volumes:
+  prometheus_data:
+
+networks:
+  microservices:
+    driver: bridge
+  monitoring:
+    driver: bridge
