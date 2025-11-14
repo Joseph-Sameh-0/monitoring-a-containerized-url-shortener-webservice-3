@@ -26,7 +26,6 @@ data/
 backend/build/
 backend/.gradle/
 backend/bin/
-*.jar
 *.war
 
 # Microservices builds
