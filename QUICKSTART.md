@@ -154,7 +154,6 @@ These are set in `frontend/.env` and can be modified for different environments.
 
 - Read [MICROSERVICES.md](MICROSERVICES.md) for detailed architecture overview
 - Check [frontend/MICROSERVICES_SETUP.md](frontend/MICROSERVICES_SETUP.md) for frontend configuration
-- View [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) for technical details
 
 ## Support
 
