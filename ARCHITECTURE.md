@@ -384,14 +384,13 @@ sequenceDiagram
 All services share the same `JWT_SECRET` environment variable to validate tokens:
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    JWT_SECRET                           │
-│         (Shared across all microservices)               │
-├─────────────────────────────────────────────────────────┤
-│  Auth Service  │  URL Service  │ File Service │ Note    │
-│  (generates)   │  (validates)  │ (validates)  │ Service │
-│                │               │              │(validate│
-└─────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────┐
+│                           JWT_SECRET                                 │
+│              (Shared across all microservices)                       │
+├──────────────────────────────────────────────────────────────────────┤
+│  Auth Service  │  URL Service  │  File Service  │    Note Service    │
+│  (generates)   │  (validates)  │   (validates)  │    (validates)     │
+└──────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -941,4 +940,4 @@ docker compose down
 
 **Digital Egypt Pioneers Initiative - DevOps Track**  
 **URL Shortener Microservices Project**  
-**Last Updated:** December 2024
+**Last Updated:** December 1, 2024
