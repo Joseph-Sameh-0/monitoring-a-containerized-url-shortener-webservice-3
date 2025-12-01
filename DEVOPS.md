@@ -130,11 +130,11 @@ graph LR
     subgraph "Docker Resources"
         C1 & C2 & C3 & C4 & C5 --> N1[microservices network]
         C1 & C2 & C3 & C4 & C5 & C6 & C7 --> N2[monitoring network]
-        C1 --> V1[auth-data volume]
-        C2 --> V2[urls-data volume]
-        C3 --> V3[files-data volume]
-        C4 --> V4[notes-data volume]
-        C6 --> V5[prometheus_data volume]
+        C1 --> V1[./data/auth bind mount]
+        C2 --> V2[./data/urls bind mount]
+        C3 --> V3[./data/files bind mount]
+        C4 --> V4[./data/notes bind mount]
+        C6 --> V5[prometheus_data named volume]
     end
 ```
 
@@ -770,7 +770,7 @@ docker compose up -d --scale url-service=3
 graph TB
     subgraph "Host File System"
         DataDir[./data/]
-        PromVol[prometheus_data volume]
+        PromVol[prometheus_data named volume]
     end
     
     subgraph "Containers"
@@ -803,6 +803,14 @@ graph TB
     Note --> NoteDB
     Prom --> PromDB
 ```
+
+### Volume Types Used
+
+This project uses two types of data persistence:
+
+1. **Bind Mounts** (`./data/` directory): Used by microservices (auth, url, file, note) for SQLite databases and file uploads. These are mapped directly from the host filesystem into containers.
+
+2. **Named Volume** (`prometheus_data`): Used by Prometheus for time-series data. This is a Docker-managed volume for better isolation and performance.
 
 ### Data Directory Structure
 
